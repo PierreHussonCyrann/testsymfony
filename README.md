@@ -1,7 +1,7 @@
 # testsymfony
-testsymfony P Husson sous symfony 4
+test symfony P Husson sous symfony 4
 
-Documentation : tous les commandes php bin/console ou doctrine sont effectuées à la racine du répertoire 
+Documentation : toutes les commandes php bin/console ou doctrine sont effectuées à la racine du répertoire 
 
 Liste des commandes à effectuer avant de lancer
 
