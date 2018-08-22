@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un film{% endblock %}
+
+{% block body %}
+    <h1 class="center">Ajouter un film</h1>
+    <div class="addform">
+    {{ form_start(form) }}
+    <div class="formrow">{{ form_label(form.titre) }}{{ form_widget(form.titre) }}</div>
+    <div class="formrow">{{ form_label(form.description) }}{{ form_widget(form.description) }}</div>
+    <div class="formrow">{{ form_label(form.photo) }}{{ form_widget(form.photo) }}</div>
+    <div class="formrow">{{ form_label(form.categorie) }}{{ form_widget(form.categorie) }}</div>
+
+{{ form_end(form) }}
+</div>
+{% endblock %}

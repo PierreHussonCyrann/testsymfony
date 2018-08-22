@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Test P Husson{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="{{ asset('/CSS/testcss.css')}}">
+            <script type="text/javascript" src="{{ asset('/JS/jquery-3.3.1.js') }}"></script>
+        {% endblock %}
+    </head>
+    <body>
+    <div class="container">
+	<nav class="user-interface">
+		<a>nombre total de films : {{ films_tracking.FindCountFilms() }}</a>
+		<a href="{{path('recherche') }}">Rechercher</a>
+        <a href="{{path('index') }}">Gestion</a>
+		<a href="{{ path('add_film') }}">Créer une fiche</a>
+		<a href="{{ path('tags') }}">Catégories</a>
+	</nav>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </div>
+    </body>
+</html>

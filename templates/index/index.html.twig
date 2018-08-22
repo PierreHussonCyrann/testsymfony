@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des films {% endblock %}
+
+{% block body %}
+
+<div class="testlist">
+    {% if liste is defined %}
+    <h1 class="center">Liste des films</h1>
+    <table class="maxwidth">
+      <th>
+        <tr class="titles"><td>Titre</td>
+            <td>Description</td>
+            <td>Catégorie</td>
+            <td>Modifier</td>
+            <td>Supprimer</td>
+        </tr>
+      </th>
+        <tbody>
+    {% for list in liste %}
+        <tr>
+            <td><a href="{{ path('detail', {'categorie':list.categorie.getCategorie(), 'titre':list.titre ,'id':list.id}) }}">{{ list.titre }}</a></td>
+            <td>{{ list.description }}</a></td>
+            <td><a href="{{ path('singletag', {'categorie':list.categorie.getCategorie()}) }}">{{ list.categorie.getCategorie() }}</a></td>
+            <td><a href="{{ path('modifier_fiche', { 'id' : list.id }) }}">modifier</a></td>
+            <td><a href="{{ path('del-film', { 'id' : list.id }) }}">Supprimer</a></td>
+        </tr>
+        {% endfor %}
+    <tfooter>
+        <tr>
+            <td colspan="5">Total affiché : {{liste|length }}</td>
+        </tr>
+    </tfooter>
+    </tbody>
+    </table>
+
+    <div class="text-center">{{ knp_pagination_render(liste) }}</div>
+</div>
+    {% endif %}
+    {% if listecateg is defined %}
+        <h1 class="center">Liste des catégories</h1>
+        <table class="maxwidth">
+            <th>
+                <tr class="titles"><td>Catégories</td>
+                </tr>
+            </th>
+            <tbody>
+            {% for listecat in listecateg %}
+                <tr>
+                    <td><a href="{{ path('singletag', {'categorie':listecat.categorie})}}">{{ listecat.categorie}}</a></td>
+                </tr>
+            {% endfor %}
+            <tfooter>
+                <tr>
+                    <td colspan="5">Total affiché : {{listecateg|length }}</td>
+                </tr>
+            </tfooter>
+            </tbody>
+        </table>
+    {% endif%}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rechercher un film{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <h1>Rechercher un film </h1>
+    <div class="addform">
+        {{ form_start(formulaire) }}
+        {{ form_widget(formulaire)}}
+        {{ form_end(formulaire) }}
+    </div>
+    <div class="result">
+        {% if resultats is defined %}
+            <table class="maxwidth">
+                <th>
+                    <tr class="titles"><td>Titre</td>
+                        <td>Catégorie</td>
+                    </tr>
+                </th>
+                <tbody>
+                {% for row in resultats %}
+                    <tr class="titles"><td><a href="{{ path('detail', {'categorie':row.categorie.getCategorie(), 'titre':row.titre ,'id':row.id}) }}">{{ row.titre}}</a></td>
+                    <td><a href="{{ path('singletag', {'categorie':row.categorie.categorie}) }}">{{ row.categorie.categorie}}</a></td></tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        {% endif%}
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ titre }}{% endblock %}
+
+{% block body %}
+    <div class="testlist">
+        <h1 class="center">{{ titre }}</h1>
+        <h3>catégorie : {{ categorie }}</h3>
+        <p><img src="{{ film.getPhoto()}}" alt="ceci est un lien dummy"/> </p>
+        <p> {{ film.getDescription() }}</p>
+
+    </div>
+{% endblock %}

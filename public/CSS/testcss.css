@@ -1,0 +1,71 @@
+
+* {
+	box-sizing: border-box;
+}
+
+*:hover {
+	transition: all .2s ease 0s;
+}
+
+html {font-size: 62.5%;
+}
+
+body {
+    margin-left: auto;
+	margin-right: auto;
+    padding: 0;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+.maxwidth{
+	max-width:1000px;
+}
+.container {
+    max-width:1100px;
+	margin: 0 auto;
+}
+
+
+td{
+	width:15%;
+	text-align:center;
+	border:1px solid black;
+	border-collapse:collapse;
+}
+.titles{
+	color:red;
+}
+.user-interface{
+	display:flex;
+	justify-content:space-between;
+	flex-wrap:nowrap;
+	margin-bottom:1rem;
+	text-align:center;
+	font-family: 'Acme', sans-serif;
+}
+
+.center{
+	text-align:center;
+}
+
+.flex-nowrap{
+	display:flex;
+	flex-wrap:nowrap;
+	justify-content:space-between;
+	
+}
+
+.addform label{
+	margin-right:2rem;
+}
+.addform textarea{
+	width:40%;
+	height:5rem;
+}
+.addform input{
+	width:40%;
+}
+
+.formrow{
+	margin-bottom:2rem;
+}
